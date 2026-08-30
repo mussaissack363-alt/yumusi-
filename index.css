@@ -1,0 +1,252 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ═══════════════════════════════════════════
+   YUMUSI Design System v2
+   ═══════════════════════════════════════════ */
+
+/* ═══ Base ═══ */
+html {
+  background-color: #111310;
+  color: #F3EEE1;
+  font-family: 'Hanken Grotesk', system-ui, sans-serif;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ═══ Scrollbar ═══ */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0B08;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(201, 162, 75, 0.3);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(201, 162, 75, 0.5);
+}
+
+/* ═══ Focus ring ═══ */
+*:focus-visible {
+  outline: 2px solid #C9A24B;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ═══ Engraved Headline Gradient ═══ */
+.headline-gold {
+  background: linear-gradient(180deg, #F0D48A 0%, #C9A24B 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ═══ Gold Spark (4-point star) ═══ */
+.gold-spark::before {
+  content: '✦';
+  display: inline-block;
+  margin-right: 8px;
+  font-size: 10px;
+  color: #C9A24B;
+  vertical-align: middle;
+  opacity: 0.8;
+}
+
+/* ═══ Glass Card (frosted glass — translucent so the 3D logo shows through) ═══ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(212, 175, 106, 0.16);
+  border-radius: 8px;
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+}
+
+/* ═══ Gold Edge Card (primary action card — translucent with gold border) ═══ */
+.glass-card-gold-edge {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 8px;
+  box-shadow:
+    inset 1px 1px 0 0 rgba(255, 255, 255, 0.05),
+    0 1px 3px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid transparent;
+  background-image:
+    linear-gradient(rgba(20, 30, 20, 0.25), rgba(20, 30, 20, 0.25)),
+    linear-gradient(135deg, rgba(201, 162, 75, 0.4) 0%, rgba(201, 162, 75, 0.05) 40%, transparent 70%);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+/* ═══ Gold Button (pill shape) ═══ */
+.btn-gold {
+  background: linear-gradient(135deg, #C9A24B, #8A733E);
+  color: #0A0B08;
+  font-weight: 600;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+  transition: all 0.2s ease;
+}
+.btn-gold:hover {
+  background: linear-gradient(135deg, #F0D48A, #C9A24B);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(201, 162, 75, 0.3);
+}
+.btn-gold:active {
+  transform: translateY(0);
+}
+
+/* ═══ Ghost Button ═══ */
+.btn-ghost {
+  background: transparent;
+  color: #C9A24B;
+  font-weight: 500;
+  padding: 10px 24px;
+  border-radius: 9999px;
+  border: 1px solid rgba(201, 162, 75, 0.3);
+  cursor: pointer;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+.btn-ghost:hover {
+  border-color: #C9A24B;
+  background: rgba(201, 162, 75, 0.08);
+}
+
+/* ═══ Input ═══ */
+.input-field {
+  background: rgba(10, 11, 8, 0.6);
+  border: 1px solid rgba(212, 175, 106, 0.16);
+  border-radius: 4px;
+  padding: 10px 14px;
+  color: #F3EEE1;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 14px;
+  width: 100%;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+.input-field::placeholder {
+  color: #9C9483;
+}
+.input-field:focus {
+  outline: none;
+  border-color: #C9A24B;
+  box-shadow: 0 0 0 2px rgba(201, 162, 75, 0.1);
+}
+.input-field option {
+  background: #142219;
+  color: #F3EEE1;
+}
+
+/* ═══ Input Label ═══ */
+.input-label {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9C9483;
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ═══ Select ═══ */
+select.input-field {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C9A24B' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  padding-right: 32px;
+}
+
+/* ═══ Table ═══ */
+.yumusi-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.yumusi-table th {
+  text-align: left;
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #9C9483;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(212, 175, 106, 0.12);
+}
+.yumusi-table td {
+  padding: 12px 16px;
+  font-size: 14px;
+  border-bottom: 1px solid rgba(212, 175, 106, 0.06);
+  vertical-align: middle;
+}
+.yumusi-table tbody tr:hover {
+  background: rgba(201, 162, 75, 0.03);
+}
+
+/* ═══ Low-stock flag ═══ */
+.low-stock-row {
+  background: rgba(220, 60, 60, 0.06) !important;
+}
+.low-stock-badge {
+  background: rgba(220, 60, 60, 0.15);
+  color: #f87171;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* ═══ Reduced Motion ═══ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* ═══ Stat value (mono) ═══ */
+.stat-value {
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+  font-size: 28px;
+  color: #F0D48A;
+  letter-spacing: -0.02em;
+}
+.stat-label {
+  font-family: 'Hanken Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 4px;
+  color: #9C9483;
+}
